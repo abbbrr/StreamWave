@@ -24,7 +24,7 @@ struct HelloView: View {
                         .frame(width: .infinity, height: 300)
                     
                     // H1
-                    Text("Добро пожаловать в мир подкастов ")
+                    Text("Добро пожаловать в StreamWave ")
                       .font(
                         Font.custom("Cera Pro", size: 28)
                           .weight(.bold)

@@ -28,6 +28,7 @@ struct MainView: View {
                         
                         VStack{
                             KinoCard()
+                            KinoCard()
                         }
                     }
                 }

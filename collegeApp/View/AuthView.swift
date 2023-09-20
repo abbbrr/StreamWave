@@ -44,6 +44,9 @@ struct AuthView: View {
                       .foregroundColor(Color(red: 0.94, green: 0.91, blue: 0.9))
                     
                     TextField("", text: $viewModel.people.email)
+                        .onChange(of: viewModel.people.email, perform: { newEmail in
+                            viewModel.people.email = newEmail.lowercased()
+                        })
                         .padding()
                         .background(Color("textFieldColor"))
                         .foregroundColor(Color.white) // цвет текста
@@ -150,10 +153,10 @@ struct AuthView: View {
                         
                         Button {
                             if login{
+//                                print("regis")
                                 if viewModel.people.password == copyPass && viewModel.people.password.count >= 6{
-//                                    print("regis")
                                     viewModel.register()
-                                    
+                                                     
                                     viewModel.people.email = ""
                                     viewModel.people.password = ""
                                     self.login.toggle()
