@@ -20,6 +20,9 @@
 		64749DC22AAD047E00116AE5 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64749DC12AAD047E00116AE5 /* AuthView.swift */; };
 		64749DC42AAD0DE200116AE5 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64749DC32AAD0DE100116AE5 /* MainView.swift */; };
 		64749DC72AAD0E2800116AE5 /* KinoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64749DC62AAD0E2800116AE5 /* KinoCard.swift */; };
+		649B3D5A2ABACD3A00EDD97D /* PageScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649B3D592ABACD3A00EDD97D /* PageScreenView.swift */; };
+		649B3D5C2ABAD01900EDD97D /* Additional.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649B3D5B2ABAD01900EDD97D /* Additional.swift */; };
+		649B3D5E2ABAECAE00EDD97D /* ReviewsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649B3D5D2ABAECAE00EDD97D /* ReviewsCard.swift */; };
 		64C51DEA2AADDB0D005D9A2A /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C51DE92AADDB0D005D9A2A /* People.swift */; };
 		64C51DEC2AAF4DBC005D9A2A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 64C51DEB2AAF4DBC005D9A2A /* GoogleService-Info.plist */; };
 		64C51DEF2AAF4E41005D9A2A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 64C51DEE2AAF4E41005D9A2A /* FirebaseAuth */; };
@@ -64,6 +67,9 @@
 		64749DC12AAD047E00116AE5 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		64749DC32AAD0DE100116AE5 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		64749DC62AAD0E2800116AE5 /* KinoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KinoCard.swift; sourceTree = "<group>"; };
+		649B3D592ABACD3A00EDD97D /* PageScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageScreenView.swift; sourceTree = "<group>"; };
+		649B3D5B2ABAD01900EDD97D /* Additional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Additional.swift; sourceTree = "<group>"; };
+		649B3D5D2ABAECAE00EDD97D /* ReviewsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsCard.swift; sourceTree = "<group>"; };
 		64C51DE92AADDB0D005D9A2A /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
 		64C51DEB2AAF4DBC005D9A2A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		64C51DF82AAF4F3C005D9A2A /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
@@ -166,6 +172,7 @@
 				64749DBF2AACADD100116AE5 /* HelloView.swift */,
 				64749DC12AAD047E00116AE5 /* AuthView.swift */,
 				64749DC32AAD0DE100116AE5 /* MainView.swift */,
+				649B3D592ABACD3A00EDD97D /* PageScreenView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -192,6 +199,8 @@
 			children = (
 				64749DC62AAD0E2800116AE5 /* KinoCard.swift */,
 				641CED182AB0B28F00D14BBA /* RaitingView.swift */,
+				649B3D5B2ABAD01900EDD97D /* Additional.swift */,
+				649B3D5D2ABAECAE00EDD97D /* ReviewsCard.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -337,13 +346,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				649B3D5C2ABAD01900EDD97D /* Additional.swift in Sources */,
 				64749DC02AACADD100116AE5 /* HelloView.swift in Sources */,
 				64749D952AAC647B00116AE5 /* ContentView.swift in Sources */,
 				64749DC72AAD0E2800116AE5 /* KinoCard.swift in Sources */,
+				649B3D5E2ABAECAE00EDD97D /* ReviewsCard.swift in Sources */,
 				64749DC22AAD047E00116AE5 /* AuthView.swift in Sources */,
 				64C51DF92AAF4F3C005D9A2A /* AuthViewModel.swift in Sources */,
 				64749DC42AAD0DE200116AE5 /* MainView.swift in Sources */,
 				64749D932AAC647B00116AE5 /* collegeAppApp.swift in Sources */,
+				649B3D5A2ABACD3A00EDD97D /* PageScreenView.swift in Sources */,
 				641CED192AB0B28F00D14BBA /* RaitingView.swift in Sources */,
 				64C51DEA2AADDB0D005D9A2A /* People.swift in Sources */,
 				641CED172AB0A98D00D14BBA /* PodcastCart.swift in Sources */,
