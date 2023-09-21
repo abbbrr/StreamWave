@@ -13,5 +13,6 @@ struct PodcastCart {
     let image:String
     let author: String
     var information: String
+    var videoUrl:String,
     var raiting: Double
 }
