@@ -6,11 +6,18 @@
 //
 
 import SwiftUI
+import AVKit
+
 
 struct PageScreenView: View {
     @State private var isShowingText = false
+    @State private var isShowingVideo = false
+    @State var showAllReviews = false
+  
     
     var text = "Человек-паук - это популярный супергеройский персонаж, созданный комиксами Marvel Comics. Он появился в комиксах в 1962 году и был придуман писателем Стэном Ли и художником Стивом Дитко. Основной сюжет рассказывает о молодом парне по имени Питер Паркер, который после укуса радиоактивного паука приобретает сверхчеловеческие способности, включая способность прилепляться к стенам, силу и быстроту.Питер Паркер становится Человеком-пауком и использует свои способности для борьбы с преступностью и защиты города Нью-Йорк от различных злодеев и суперзлодеев. Он также борется с собственными личными проблемами и ответственностями.Человек-паук стал одним из самых узнаваемых и популярных персонажей в мире комиксов и был адаптирован во множество фильмов, анимационных сериалов и видеоигр. В фильмах он часто изображается как Питер Паркер, обычный парень, сталкивающийся с моральными и эмоциональными дилеммами, а также как герой, спасающий город от угрозы."
+    
+    var texName = "Волшебные миры Хаяо Миядзаки"
     
     var body: some View {
         ZStack{
@@ -19,7 +26,7 @@ struct PageScreenView: View {
             
             //start
             ScrollView{
-                VStack(alignment: .leading){
+                VStack(alignment: .center){
                     
                     //MARK: -image and additional
                     VStack(alignment: .center,spacing: 10){
@@ -40,7 +47,7 @@ struct PageScreenView: View {
                           .frame(width: 170, alignment: .top)
                         
                         // H2
-                        Text("Волшебные миры Хаяо Миядзаки")
+                        Text(texName)
                           .font(
                             Font.custom("Cera Pro", size: 18)
                               .weight(.bold)
@@ -87,7 +94,7 @@ struct PageScreenView: View {
                                     .lineLimit(3)
                                     .font(Font.custom("PT Root UI", size: 16))
                                     .foregroundColor(Color(red: 0.94, green: 0.91, blue: 0.9))
-                                    .frame(width: .infinity, alignment: .topLeading)
+                                    .frame(width: 340, alignment: .topLeading)
                                     .padding(.horizontal,8)
                             } else {
                                 Text(text)
@@ -131,42 +138,82 @@ struct PageScreenView: View {
                         
                      //MARK: - reviews
                         VStack(alignment: .leading,spacing: 15){
-                            HStack(){
+                            
+                            //кнопку чтобы оставить отзыв
+                            Button {
+                                print("review")
+                            } label: {
+                                Text("Оставить отзыв")
+                                    .padding(.horizontal, 16)
+                                    .padding(.vertical, 8)
+                                    .foregroundColor(.black)
+                                
+                            }
+                            .frame(height: 40, alignment: .center)
+                            .background(Color(red: 1, green: 0.6, blue: 0.46))
+                            .cornerRadius(10)
+
+
+                            HStack{
                                 Text("Отзывы")
                                   .font(.title3)
                                   .bold()
                                   .foregroundColor(Color(red: 0.94, green: 0.91, blue: 0.9))
                                   .frame(width: 288, alignment: .topLeading)
                                 
-                                Text("Все")
-                                    .font(.title3)
-                                    .bold()
-                                    .multilineTextAlignment(.center)
-                                    .foregroundColor(Color(red: 1, green: 0.6, blue: 0.46))
+                                Button {
+                                    self.showAllReviews.toggle()
+                                } label: {
+                                    Text(showAllReviews ?  "Скрыть" : "Все")
+                                        .font(.title3)
+                                        .bold()
+                                        .multilineTextAlignment(.center)
+                                        .foregroundColor(Color(red: 1, green: 0.6, blue: 0.46))
                                 
+                                }
                             }
-                            ReviewsCard()
+                            ReviewsCard(showAllReviews: $showAllReviews)
                         }
-                    }
+                    }.padding(.bottom)
                     Spacer()
-                    
-                    HStack{
-                        Image(systemName: "airplayvideo")
-                        // text medium
-                        Text("Смотреть")
-                          .font(
-                            Font.custom("PT Root UI", size: 16)
-                              .weight(.medium)
-                          )
-                          .multilineTextAlignment(.center)
-                          .foregroundColor(Color(red: 0.16, green: 0.16, blue: 0.16))
+            
+                    Button {
+                        self.isShowingVideo.toggle()
+
+                    } label: {
+                        HStack{
+                            Image(systemName: "airplayvideo")
+                                .foregroundColor(.black)
+                            // text medium
+                            Text("Смотреть")
+                              .font(
+                                Font.custom("PT Root UI", size: 16)
+                                  .weight(.medium)
+                              )
+                              .multilineTextAlignment(.center)
+                              .foregroundColor(Color(red: 0.16, green: 0.16, blue: 0.16))
+                        }
+                        .padding(.vertical, 12)
+                        .frame(width: 343, height: 48, alignment: .center)
+                        .background(Color(red: 1, green: 0.6, blue: 0.46))
+                        .cornerRadius(10)
                     }
-                    .padding(.vertical, 12)
-                    .frame(width: 343, height: 48, alignment: .center)
-                    .background(Color(red: 1, green: 0.6, blue: 0.46))
-                    .cornerRadius(10)
+
+   
+                    if isShowingVideo{
+                        VStack{
+                            Text(texName)
+                                .foregroundColor(.white)
+                                .font(.title3)
+                                .bold()
+                            YTView(ID: "d4ee2299b317d421ec425be7e3680981/")
+                        }
+                        .padding(.top)
+                        .padding(.bottom)
+                    }
                     
-                }.padding(.horizontal)
+                }
+                .padding()
                 //end vstak
             }
             //end scrollview
