@@ -10,13 +10,16 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var isLoggedIn = false
+    @State private var email = ""
+    @State private var pass = ""
+    @ObservedObject var viewModel = AuthViewModel()
     
     var body: some View {
         NavigationView {
             if isLoggedIn {
-                MainView()
+                TabBarView(email:$email, pass:$pass)
             }else{
-                HelloView(isLoggedIn: $isLoggedIn)
+                HelloView(isLoggedIn: $isLoggedIn, email: $email, pass:$pass)
             }
         }
     }

@@ -8,28 +8,31 @@
 import SwiftUI
 
 struct TableList: View {
+    @Binding var pass:String
+    
     var body: some View {
         ZStack(alignment: .leading){
                    Color("textFieldcolor")
                            .edgesIgnoringSafeArea(.all)
                        
                        VStack(alignment: .leading){
-                           
-                           HStack(spacing: 20){
-                               Image(systemName: "gearshape")
-                                   .font(.title2)
-                                   .foregroundColor(.white)
-                
-                               Text("Настройки")
-                                 .font(
-                                   Font.custom("PT Root UI", size: 16)
-                                     .weight(.medium)
-                                 )
-                                 .foregroundColor(Color(red: 0.94, green: 0.91, blue: 0.9))
-                               
+                           NavigationLink(destination: SettingsView(pass:$pass)) {
+                               HStack(spacing: 20){
+                                   Image(systemName: "gearshape")
+                                       .font(.title2)
+                                       .foregroundColor(.white)
+                    
+                                   Text("Настройки")
+                                     .font(
+                                       Font.custom("PT Root UI", size: 16)
+                                         .weight(.medium)
+                                     )
+                                     .foregroundColor(Color(red: 0.94, green: 0.91, blue: 0.9))
+                                   
+                               }
+                               .padding(10)
                            }
-                           .padding(10)
-                           
+  
                            Divider()
                                .background(Color.gray)
                                .frame(width: .infinity)
@@ -67,6 +70,6 @@ struct TableList: View {
 
 struct TableList_Previews: PreviewProvider {
     static var previews: some View {
-        TableList()
+        TableList(pass: .constant("Adasda"))
     }
 }
