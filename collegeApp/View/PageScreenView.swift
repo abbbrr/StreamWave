@@ -7,13 +7,16 @@
 
 import SwiftUI
 import AVKit
+import URLImage
 
 
 struct PageScreenView: View {
     @State private var isShowingText = false
     @State private var isShowingVideo = false
+    @State private var isShowingAudio = false
     @State var showAllReviews = false
   
+    var podcast: PodcastCart
     
     var text = "Человек-паук - это популярный супергеройский персонаж, созданный комиксами Marvel Comics. Он появился в комиксах в 1962 году и был придуман писателем Стэном Ли и художником Стивом Дитко. Основной сюжет рассказывает о молодом парне по имени Питер Паркер, который после укуса радиоактивного паука приобретает сверхчеловеческие способности, включая способность прилепляться к стенам, силу и быстроту.Питер Паркер становится Человеком-пауком и использует свои способности для борьбы с преступностью и защиты города Нью-Йорк от различных злодеев и суперзлодеев. Он также борется с собственными личными проблемами и ответственностями.Человек-паук стал одним из самых узнаваемых и популярных персонажей в мире комиксов и был адаптирован во множество фильмов, анимационных сериалов и видеоигр. В фильмах он часто изображается как Питер Паркер, обычный парень, сталкивающийся с моральными и эмоциональными дилеммами, а также как герой, спасающий город от угрозы."
     
@@ -30,14 +33,19 @@ struct PageScreenView: View {
                     
                     //MARK: -image and additional
                     VStack(alignment: .center,spacing: 10){
-                        Image("spiderman")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
+                      
+                        URLImage(URL(string: "\(podcast.image)")!){ image in
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .clipped()
+                        }
+                            
                             .frame(width: 150, height: 217.44632)
                             .cornerRadius(10)
-                            .clipped()
+
                         
-                        Text("Куатбек Искандер")
+                        Text("\(podcast.author)")
                           .font(
                             Font.custom("PT Root UI", size: 16)
                               .weight(.medium)
@@ -47,7 +55,7 @@ struct PageScreenView: View {
                           .frame(width: 170, alignment: .top)
                         
                         // H2
-                        Text(texName)
+                        Text(podcast.name)
                           .font(
                             Font.custom("Cera Pro", size: 18)
                               .weight(.bold)
@@ -70,34 +78,19 @@ struct PageScreenView: View {
                             .bold()
                             .foregroundColor(.white)
                         
-                        HStack(spacing: 12){
-                            Text("Искусство")
-                                .padding(.horizontal, 16)
-                                .padding(.vertical, 8)
-                                .frame(height: 40, alignment: .center)
-                                .background(Color(red: 1, green: 0.6, blue: 0.46))
-                                .cornerRadius(10)
-                            
-                            Text("Кино")
-                                .padding(.horizontal, 16)
-                                .padding(.vertical, 8)
-                                .frame(height: 40, alignment: .center)
-                                .background(Color(red: 1, green: 0.6, blue: 0.46))
-                                .cornerRadius(10)
-                        }.padding(.bottom)
                         
                         
                         //MARK: -descriptions
                         VStack(spacing: 10){
                             if !isShowingText{
-                                Text(text)
+                                Text(podcast.information)
                                     .lineLimit(3)
                                     .font(Font.custom("PT Root UI", size: 16))
                                     .foregroundColor(Color(red: 0.94, green: 0.91, blue: 0.9))
-                                    .frame(width: 340, alignment: .topLeading)
+                                    .frame(width: .infinity, alignment: .topLeading)
                                     .padding(.horizontal,8)
                             } else {
-                                Text(text)
+                                Text(podcast.information)
                                     .font(Font.custom("PT Root UI", size: 16))
                                     .foregroundColor(Color(red: 0.94, green: 0.91, blue: 0.9))
                                     .frame(width: .infinity, alignment: .topLeading)
@@ -115,25 +108,7 @@ struct PageScreenView: View {
 
                             }
                         }.padding(.bottom)
-                    
-                        Spacer()
-                        
-                        VStack(alignment: .leading, spacing: 5){
-                            // text medium
-                            Text("Издательство")
-                                .font(.title3)
-                              .foregroundColor(Color(red: 0.94, green: 0.91, blue: 0.9))
-                              .frame(width: 311, alignment: .topLeading)
-                            
-                            Text("Бомбора, 2019 г.")
-                              .font(
-                                Font.custom("PT Root UI", size: 16)
-                                  .weight(.medium)
-                              )
-                              .foregroundColor(Color(red: 1, green: 0.6, blue: 0.46))
-                              .frame(width: 170, alignment: .topLeading)
-                        }.padding(.bottom)
-                        
+                                            
                         Spacer()
                         
                      //MARK: - reviews
@@ -177,38 +152,76 @@ struct PageScreenView: View {
                     }.padding(.bottom)
                     Spacer()
             
-                    Button {
-                        self.isShowingVideo.toggle()
-
-                    } label: {
-                        HStack{
-                            Image(systemName: "airplayvideo")
-                                .foregroundColor(.black)
-                            // text medium
-                            Text("Смотреть")
-                              .font(
-                                Font.custom("PT Root UI", size: 16)
-                                  .weight(.medium)
-                              )
-                              .multilineTextAlignment(.center)
-                              .foregroundColor(Color(red: 0.16, green: 0.16, blue: 0.16))
+                    HStack{
+                        //button 1
+                        Button {
+                            self.isShowingVideo.toggle()
+                        } label: {
+                            HStack{
+                                Image(systemName: "airplayvideo")
+                                    .foregroundColor(.black)
+                                // text medium
+                                Text("Смотреть")
+                                  .font(
+                                    Font.custom("PT Root UI", size: 16)
+                                      .weight(.medium)
+                                  )
+                                  .multilineTextAlignment(.center)
+                                  .foregroundColor(Color(red: 0.16, green: 0.16, blue: 0.16))
+                            }
+                            .padding(.vertical, 12)
+                            .frame(width: 160, height: 48, alignment: .center)
+                            .background(Color(red: 1, green: 0.6, blue: 0.46))
+                            .cornerRadius(10)
                         }
-                        .padding(.vertical, 12)
-                        .frame(width: 343, height: 48, alignment: .center)
-                        .background(Color(red: 1, green: 0.6, blue: 0.46))
-                        .cornerRadius(10)
+                        
+                        //button 2
+                        Button {
+                            self.isShowingAudio.toggle()
+                        } label: {
+                            HStack{
+                                Image(systemName: "music.mic")
+                                    .foregroundColor(.black)
+                                // text medium
+                                Text("Слушать")
+                                  .font(
+                                    Font.custom("PT Root UI", size: 16)
+                                      .weight(.medium)
+                                  )
+                                  .multilineTextAlignment(.center)
+                                  .foregroundColor(Color(red: 0.16, green: 0.16, blue: 0.16))
+                            }
+                            .padding(.vertical, 12)
+                            .frame(width: 160, height: 48, alignment: .center)
+                            .background(Color(red: 1, green: 0.6, blue: 0.46))
+                            .cornerRadius(10)
+                        }
+
                     }
+                    
 
    
                     if isShowingVideo{
                         VStack{
-                            Text(texName)
+                            Text(podcast.name)
                                 .foregroundColor(.white)
                                 .font(.title3)
                                 .bold()
-                            YTView(ID: "d4ee2299b317d421ec425be7e3680981/")
+                            YTView(ID: "\(podcast.videoUrl )/")
                         }
                         .padding(.top)
+                        .padding(.bottom)
+                    }
+                    
+                    if isShowingAudio{
+                        VStack{
+                            Text(podcast.name)
+                                .foregroundColor(.white)
+                                .font(.title3)
+                                .bold()
+                            AudioComponent(audioURL: URL(string: "\( podcast.audioUrl)"))
+                        }
+                        .padding(.top,20)
                         .padding(.bottom)
                     }
                     
@@ -221,8 +234,8 @@ struct PageScreenView: View {
     }
 }
 
-struct PageScreenView_Previews: PreviewProvider {
-    static var previews: some View {
-        PageScreenView()
-    }
-}
+    //struct PageScreenView_Previews: PreviewProvider {
+    //    static var previews: some View {
+    //        PageScreenView(podcast: PodcastCart)
+    //    }
+    //}

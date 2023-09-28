@@ -6,10 +6,19 @@
 //
 
 import SwiftUI
+import Firebase
+
+extension String {
+    subscript(idx: Int) -> String {
+        String(self[index(startIndex, offsetBy: idx)].uppercased())
+    }
+}
 
 struct ProfileView: View {
     @Binding var email:String
     @Binding var pass:String
+    @Binding var isLoggedIn:Bool
+    
     
     var body: some View {
         NavigationView {
@@ -20,11 +29,12 @@ struct ProfileView: View {
                 VStack(alignment: .center, spacing: 40){
                     //MARK: - personInfo
                     VStack(alignment: .center,spacing: 5){
-                        Text("Привет,")
-                            .font(.title3)
-                            .bold()
-                            .foregroundColor(Color(red: 0.94, green: 0.91, blue: 0.9))
-                            .frame(width: 250)
+                        let name = String(email[email.startIndex]).uppercased() + String(email.split(separator: "")[1][email.split(separator: "")[1].startIndex]).uppercased()
+                        
+                        ZStack {
+                            Circle().frame(width: 50, height: 50)
+                            Text(name).foregroundStyle(Color(UIColor.white))
+                        }
                         
                         Text("\(email)!")
                             .font(.title3)
@@ -47,7 +57,15 @@ struct ProfileView: View {
                     
                     //MARK: -exit Button
                     Button {
-                        print("exit")
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0){
+                            do{
+                                try Auth.auth().signOut()
+                                self.isLoggedIn = false
+                                print("okkk")
+                            } catch let error{
+                                print("Ошибка при выходе из аккаунта: \(error.localizedDescription)")
+                            }
+                        }
                     } label: {
                         Text("Выйти")
                             .foregroundColor(.red)
@@ -69,6 +87,6 @@ struct ProfileView: View {
 
 //struct ProfileView_Previews: PreviewProvider {
 //    static var previews: some View {
-//        ProfileView()
+//        ProfileView(email: .constant("raun@gmail"), pass: .constant("adsad"), user: People.init(email: "rayn", password: "adsads"))
 //    }
 //}

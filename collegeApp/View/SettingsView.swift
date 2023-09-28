@@ -30,22 +30,6 @@ struct SettingsView: View {
                                .edgesIgnoringSafeArea(.all)
                            
                            VStack(alignment: .leading){
-                               
-                               HStack(spacing: 20){
-                                   Text("Изменить адрес электронной почты")
-                                     .font(
-                                       Font.custom("PT Root UI", size: 16)
-                                         .weight(.medium)
-                                     )
-                                     .foregroundColor(Color(red: 0.94, green: 0.91, blue: 0.9))
-
-                               }
-                               .padding(10)
-                               
-                               Divider()
-                                   .background(Color.gray)
-                                   .frame(width: .infinity)
-                               
                                HStack(spacing: 20){
                                    Text("Изменить пароль")
                                      .font(
@@ -132,7 +116,7 @@ struct SettingsView: View {
                                }
                        }
                    }
-                   .frame(width: .infinity, height: 130)
+                   .frame(width: .infinity, height: 80)
                    .overlay(
                        RoundedRectangle(cornerRadius: 15)
                        .inset(by: 0.5)
@@ -145,8 +129,8 @@ struct SettingsView: View {
     }
 }
 
-//struct SettingsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SettingsView(pass: .constant("asdad"))
-//    }
-//}
+struct SettingsView_Previews: PreviewProvider {
+    static var previews: some View {
+        SettingsView(pass: .constant("asdad"))
+    }
+}
