@@ -9,18 +9,19 @@ import SwiftUI
 import AVKit
 import URLImage
 
-
 struct PageScreenView: View {
     @State private var isShowingText = false
     @State private var isShowingVideo = false
     @State private var isShowingAudio = false
     @State var showAllReviews = false
+    @State private var isShowAddReview = false
+    
+    @Binding var email:String
+    @State var textReview = ""
+    @State var raiting:Int = 1
   
     var podcast: PodcastCart
-    
-    var text = "Человек-паук - это популярный супергеройский персонаж, созданный комиксами Marvel Comics. Он появился в комиксах в 1962 году и был придуман писателем Стэном Ли и художником Стивом Дитко. Основной сюжет рассказывает о молодом парне по имени Питер Паркер, который после укуса радиоактивного паука приобретает сверхчеловеческие способности, включая способность прилепляться к стенам, силу и быстроту.Питер Паркер становится Человеком-пауком и использует свои способности для борьбы с преступностью и защиты города Нью-Йорк от различных злодеев и суперзлодеев. Он также борется с собственными личными проблемами и ответственностями.Человек-паук стал одним из самых узнаваемых и популярных персонажей в мире комиксов и был адаптирован во множество фильмов, анимационных сериалов и видеоигр. В фильмах он часто изображается как Питер Паркер, обычный парень, сталкивающийся с моральными и эмоциональными дилеммами, а также как герой, спасающий город от угрозы."
-    
-    var texName = "Волшебные миры Хаяо Миядзаки"
+    @EnvironmentObject var firestoreManager:CartViewModel
     
     var body: some View {
         ZStack{
@@ -96,7 +97,7 @@ struct PageScreenView: View {
                                     .frame(width: .infinity, alignment: .topLeading)
                                     .padding(.horizontal,8)
                             }
-                            
+
                             Button {
                                 withAnimation {
                                     self.isShowingText.toggle()
@@ -116,7 +117,7 @@ struct PageScreenView: View {
                             
                             //кнопку чтобы оставить отзыв
                             Button {
-                                print("review")
+                                self.isShowAddReview.toggle()
                             } label: {
                                 Text("Оставить отзыв")
                                     .padding(.horizontal, 16)
@@ -127,14 +128,58 @@ struct PageScreenView: View {
                             .frame(height: 40, alignment: .center)
                             .background(Color(red: 1, green: 0.6, blue: 0.46))
                             .cornerRadius(10)
-
-
+                            .sheet(isPresented: $isShowAddReview) {
+                                VStack{
+                                    TextField("", text: $email)
+                                        .disabled(true)
+                                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                                    
+                                    TextField("Введите текст для отзыва", text: $textReview)
+                                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                                    
+                                    Section(header: Text("Выберите рейтинг")) {
+                                        Picker("Рейтинг", selection: $raiting) {
+                                            ForEach(1..<6) { index in
+                                                Text("\(index)")
+                                            }
+                                        }
+                                        .pickerStyle(SegmentedPickerStyle())
+                                    }
+                                    HStack{
+                                        Text("Ваш рейтинг: \(Int(raiting + 1)) ")
+                                        Image(systemName: "star.fill")
+                                            .frame(width: 5, height: 4)
+                                            .foregroundColor(.yellow)
+                                    }
+                                    .padding()
+                                    
+                                    Button {
+                                        //
+                                    } label: {
+                                        Text("Отправить")
+                                            .font(
+                                                Font.custom("PT Root UI", size: 14)
+                                                    .weight(.medium)
+                                            )
+                                            .multilineTextAlignment(.center)
+                                            .foregroundColor(Color(red: 0.16, green: 0.16, blue: 0.16))
+                                    }
+                                    .padding(.horizontal, 123)
+                                    .padding(.vertical, 12)
+                                    .frame(width: 343, height: 48, alignment: .center)
+                                    .background(Color(red: 1, green: 0.6, blue: 0.46))
+                                    .cornerRadius(10)
+                                    
+                                }
+                                .padding()
+                            }
+                            
                             HStack{
                                 Text("Отзывы")
-                                  .font(.title3)
-                                  .bold()
-                                  .foregroundColor(Color(red: 0.94, green: 0.91, blue: 0.9))
-                                  .frame(width: 288, alignment: .topLeading)
+                                    .font(.title3)
+                                    .bold()
+                                    .foregroundColor(Color(red: 0.94, green: 0.91, blue: 0.9))
+                                    .frame(width: 288, alignment: .topLeading)
                                 
                                 Button {
                                     self.showAllReviews.toggle()
@@ -144,10 +189,23 @@ struct PageScreenView: View {
                                         .bold()
                                         .multilineTextAlignment(.center)
                                         .foregroundColor(Color(red: 1, green: 0.6, blue: 0.46))
-                                
+                                    
                                 }
                             }
                             ReviewsCard(showAllReviews: $showAllReviews)
+                        
+
+
+
+                            VStack(alignment: .leading, spacing: 20){
+                                //MARK: -reviews, profile
+//                                ForEach(firestoreManager.reviews){review in
+//                                    Text("\(review.author): \(review.text)")
+//                                        .foregroundColor(.green)
+//                                }
+                                
+                                Text("adad").foregroundColor(.white)
+                            }
                         }
                     }.padding(.bottom)
                     Spacer()

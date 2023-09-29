@@ -11,6 +11,8 @@ import FirebaseAuth
 struct AuthView: View {
     @ObservedObject  var viewModel =  AuthViewModel()
     @Binding var isLoggedIn: Bool
+    @Binding var email:String
+    @Binding var pass:String
     
     @State  var login = true
     @State private var errorText = false
@@ -18,6 +20,7 @@ struct AuthView: View {
 
     @State private var copyPass = ""
 
+    
     
     
     var body: some View {
@@ -167,7 +170,6 @@ struct AuthView: View {
                                 
                             } else {
 //                                print("login")
-                                
                                 if  viewModel.people.password.count < 6{
                                     errorText = true
                                 } else if (viewModel.people.email.isEmpty ){
@@ -181,6 +183,8 @@ struct AuthView: View {
                                             errorText = false
                                             isLoggedIn = true
                                             viewModel.login()
+                                            email = viewModel.people.email
+                                            pass = viewModel.people.password
                                         }
                                     }
                                 }
