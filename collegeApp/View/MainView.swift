@@ -10,6 +10,8 @@ import SwiftUI
 struct MainView: View {
     
     @EnvironmentObject var firestoreManager:CartViewModel
+    @Binding var email:String
+
     
     let columns = [
         GridItem(.fixed(200)),
@@ -51,7 +53,7 @@ struct MainView: View {
                             VStack {
                                 LazyVGrid(columns: columns, spacing: 20) {
                                     ForEach(firestoreManager.podcasts, id: \.id) { podcast in
-                                        NavigationLink(destination: PageScreenView(podcast: podcast)) {
+                                        NavigationLink(destination: PageScreenView(email: $email, podcast: podcast)) {
                                             KinoCard(podcast: podcast)
                                         }
                                     }
@@ -72,6 +74,6 @@ struct MainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        MainView(email: .constant("Sd"))
     }
 }

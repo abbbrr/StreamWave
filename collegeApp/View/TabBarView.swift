@@ -14,7 +14,7 @@ struct TabBarView: View {
     
     var body: some View {
         TabView{
-            MainView()
+            MainView(email: $email)
                 .tabItem {
                     Label("Menu", systemImage: "house")
                 }

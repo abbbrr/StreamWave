@@ -6,13 +6,17 @@
 //
 
 import Foundation
+import Firebase
+import FirebaseFirestore
+import RealmSwift
 
-
-struct PodcastCart {
+struct PodcastCart: Identifiable{
+    var id: String = UUID().uuidString
     let name: String
     let image:String
     let author: String
     var information: String
-    var videoUrl:String,
-    var raiting: Double
+    var videoUrl:String?
+    var audioUrl:String?
+    var raiting: Int
 }

@@ -8,7 +8,6 @@
 import Foundation
 
 struct People{
-//    let name: String?
     var email: String
     var password:String
 }

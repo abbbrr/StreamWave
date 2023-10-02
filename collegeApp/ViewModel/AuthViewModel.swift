@@ -19,11 +19,8 @@ class AuthViewModel: ObservableObject{
                 print("Ошибка при входе: \(error.localizedDescription)")
             } else{
                 self.isSignedIn = true
-                print("Успешный вход")
             }
         }
-        
-      
     }
     
     func register(){
@@ -32,10 +29,19 @@ class AuthViewModel: ObservableObject{
                 print("Ошибка при регистрации: \(error.localizedDescription)")
             } else{
                 self.isSignedIn = true
-                print("Успешная регистрация ")
             }
         }
     }
     
+    
+    func signOut() {
+        do {
+            try Auth.auth().signOut()
+            people.email = ""
+            isSignedIn = false
+        } catch let error {
+            print("Ошибка при выходе из системы: \(error.localizedDescription)")
+        }
+    }
     
 }
