@@ -26,6 +26,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct collegeAppApp: App {
     @StateObject var firestoreManager = CartViewModel()
+    @StateObject var likeViewModel = LikeViewModel()
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
     
@@ -33,6 +34,7 @@ struct collegeAppApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(firestoreManager)
+                .environmentObject(likeViewModel)
         }
     }
 }

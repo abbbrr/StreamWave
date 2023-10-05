@@ -10,21 +10,19 @@ import AVKit
 import URLImage
 
 struct PageScreenView: View {
+    @State private var isShowingSettings = false
     @State private var isShowingText = false
     @State private var isShowingVideo = false
     @State private var isShowingAudio = false
-    @State var showAllReviews = false
-    @State private var isShowAddReview = false
+
     
     @Binding var email:String
-    @State var textReview =  ""
-    @State var raiting = 0
   
     var podcast: PodcastCart
     @EnvironmentObject var firestoreManager:CartViewModel
+    @EnvironmentObject var likeViewModel: LikeViewModel
     
-    
-//    @ObservedObject var podcastCartViewModel = PodcastCartViewModel()
+
     
     var body: some View {
         ZStack{
@@ -113,6 +111,15 @@ struct PageScreenView: View {
                             }
                         }.padding(.bottom)
                         
+                        Button {
+                            likeViewModel.addToLiked(podcast: podcast)
+                        } label: {
+                            Text("ADD to like")
+                                .foregroundColor(.white)
+                                .font(.title)
+                        }
+
+                        
                     }.padding(.bottom)
                     Spacer()
             
@@ -171,7 +178,7 @@ struct PageScreenView: View {
                                 .foregroundColor(.white)
                                 .font(.title3)
                                 .bold()
-                            YTView(ID: "\(podcast.videoUrl )/")
+                            YTView(ID: "\(podcast.videoUrl)" )
                         }
                         .padding(.top)
                         .padding(.bottom)
@@ -192,14 +199,9 @@ struct PageScreenView: View {
                 }
                 .padding()
                 //end vstak
+
             }
             //end scrollview
         }
     }
 }
-
-    //struct PageScreenView_Previews: PreviewProvider {
-    //    static var previews: some View {
-    //        PageScreenView(podcast: PodcastCart)
-    //    }
-    //}
