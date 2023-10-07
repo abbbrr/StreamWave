@@ -9,10 +9,6 @@ import SwiftUI
 import URLImage
 
 struct KinoCard: View {
-//    var carts: [PodcastCart] = [
-//        PodcastCart(id: "1", name: "человек", image: "spiderman", author: "rauan", information: "dsadasdada", raiting: 3)
-//    ]
-//
     var podcast: PodcastCart
     
     var body: some View {
@@ -36,7 +32,7 @@ struct KinoCard: View {
                         .font(Font.custom("PT Root UI", size: 12).weight(.medium))
                         .foregroundColor(Color(red: 0.94, green: 0.91, blue: 0.9))
                         .frame(maxWidth: .infinity, alignment: .leading)
-                        .lineLimit(2) // Максимум 2 строки для имени подкаста
+                        .lineLimit(2)
 
                     Text(podcast.author)
                         .font(Font.custom("PT Root UI", size: 10))
@@ -54,9 +50,3 @@ struct KinoCard: View {
         .padding(.horizontal)
     }
 }
-
-//struct KinoCard_Previews: PreviewProvider {
-//    static var previews: some View {
-//        KinoCard()
-//    }
-//}

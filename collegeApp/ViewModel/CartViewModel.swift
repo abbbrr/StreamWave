@@ -35,9 +35,11 @@ class CartViewModel:ObservableObject{
                 let videoUrl = data["videoUrl"] as? String ?? ""
                 let audioUrl = data["audioUrl"] as? String ?? ""
                 let raiting = data["raiting"] as? Int ?? 0
+                let time = data["time"] as? String ?? ""
+                let people = data["people"] as? Int ?? 0
                 let id = document.documentID
                                 
-                let podcast = PodcastCart(id: id, name: name, image: image, author: author, information: information, videoUrl: videoUrl, audioUrl: audioUrl, raiting: raiting)
+                let podcast = PodcastCart(id: id, name: name, image: image, author: author, information: information, videoUrl: videoUrl, audioUrl: audioUrl, raiting: raiting, time: time, people: people)
                 self.podcasts.append(podcast)
             }
             print("Data loaded successfully. Podcast count: \(self.podcasts.count)")
@@ -45,7 +47,6 @@ class CartViewModel:ObservableObject{
         }
     }
     
-    // Функция для получения карточки по ее ID
     func getPodcast(byID id: String) -> PodcastCart? {
         return podcasts.first { $0.id == id }
     }

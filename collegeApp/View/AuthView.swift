@@ -1,10 +1,3 @@
-//
-//  AuthView.swift
-//  collegeApp
-//
-//  Created by Рауан Аблайхан on 10.09.2023.
-//
-
 import SwiftUI
 import FirebaseAuth
 
@@ -52,7 +45,7 @@ struct AuthView: View {
                         })
                         .padding()
                         .background(Color("textFieldColor"))
-                        .foregroundColor(Color.white) // цвет текста
+                        .foregroundColor(Color.white)
                         .cornerRadius(10.0)
                         .overlay(
                             RoundedRectangle(cornerRadius: 10)
@@ -71,7 +64,7 @@ struct AuthView: View {
                     SecureField("", text: $viewModel.people.password)
                         .padding()
                         .background(Color("textFieldColor"))
-                        .foregroundColor(Color.white) // цвет текста
+                        .foregroundColor(Color.white)
                         .cornerRadius(10.0)
                         .overlay(
                             RoundedRectangle(cornerRadius: 10)
@@ -153,23 +146,18 @@ struct AuthView: View {
                                     .foregroundColor(Color(red: 1, green: 0.6, blue: 0.46))
                             }
                         
-                        
                         Button {
                             if login{
-//                                print("regis")
                                 if viewModel.people.password == copyPass && viewModel.people.password.count >= 6{
                                     viewModel.register()
-                                                     
                                     viewModel.people.email = ""
                                     viewModel.people.password = ""
                                     self.login.toggle()
-                                    
-                                }else {
+                                } else{
                                     print("error либо меньши 6 знаков либо не совподают")
                                 }
                                 
                             } else {
-//                                print("login")
                                 if  viewModel.people.password.count < 6{
                                     errorText = true
                                 } else if (viewModel.people.email.isEmpty ){
@@ -221,9 +209,3 @@ struct AuthView: View {
         }
     }
 }
-
-//struct AuthView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        AuthView()
-//    }
-//}

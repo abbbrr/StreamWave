@@ -1,10 +1,3 @@
-//
-//  YTView.swift
-//  collegeApp
-//
-//  Created by Рауан Аблайхан on 21.09.2023.
-//
-
 import SwiftUI
 import WebKit
 
@@ -35,7 +28,10 @@ struct Video: UIViewRepresentable{
     }
     
     func updateUIView(_ uiView: UIViewType, context: Context) {
-        guard let youtubeUrl = URL(string: "https://rutube.ru/play/embed/\(videoID)") else { return }
+        guard let youtubeUrl = URL(string: "https://rutube.ru/video/\(videoID)/") else {
+            URL(string: "https://rutube.ru/newpage/")
+            return
+        }
         
         uiView.scrollView.isScrollEnabled = false
         uiView.load(URLRequest(url: youtubeUrl))

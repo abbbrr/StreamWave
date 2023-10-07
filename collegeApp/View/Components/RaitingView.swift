@@ -1,10 +1,3 @@
-//
-//  RaitingView.swift
-//  collegeApp
-//
-//  Created by Рауан Аблайхан on 12.09.2023.
-//
-
 import SwiftUI
 
 struct RaitingView: View {
@@ -24,9 +17,3 @@ struct RaitingView: View {
         }
     }
 }
-
-//struct RaitingView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        RaitingView()
-//    }
-//}

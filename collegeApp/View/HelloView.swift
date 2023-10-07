@@ -1,10 +1,3 @@
-//
-//  HelloView.swift
-//  collegeApp
-//
-//  Created by Рауан Аблайхан on 22.09.2023.
-//
-
 import SwiftUI
 
 struct HelloView: View {
@@ -24,7 +17,6 @@ struct HelloView: View {
                                 .resizable()
                                 .frame(width: .infinity, height: 300)
                             
-                            // H1
                             Text("Добро пожаловать в StreamWave ")
                               .font(
                                 Font.custom("Cera Pro", size: 28)
@@ -35,7 +27,6 @@ struct HelloView: View {
                               .frame(width: 270, alignment: .top)
                           
                             
-                            // text
                             Text("Доступно тысячи подкастов для прослушивания бесплатно.")
                               .font(Font.custom("PT Root UI", size: 16))
                               .multilineTextAlignment(.center)
@@ -78,9 +69,3 @@ struct HelloView: View {
                     }
     }
 }
-//
-//struct HelloView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        HelloView()
-//    }
-//}

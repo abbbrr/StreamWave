@@ -17,6 +17,7 @@ struct ContentView: View {
     @State private var pass = ""
     
     @EnvironmentObject var firestoreManager:CartViewModel
+    @EnvironmentObject var likeViewModel: LikeViewModel
     
     var body: some View {
         NavigationView {
@@ -30,13 +31,10 @@ struct ContentView: View {
             if let user = Auth.auth().currentUser{
                 self.email = user.email ?? ""
                 self.isLoggedIn = true
+                
+                likeViewModel.loadLikedPodcasts()
             }
         }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}

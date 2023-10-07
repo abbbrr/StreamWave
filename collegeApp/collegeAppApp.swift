@@ -1,10 +1,3 @@
-//
-//  collegeAppApp.swift
-//  collegeApp
-//
-//  Created by Рауан Аблайхан on 09.09.2023.
-//
-
 import SwiftUI
 import Firebase
 import FirebaseCore

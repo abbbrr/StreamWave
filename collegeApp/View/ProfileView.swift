@@ -1,24 +1,24 @@
-//
-//  ProfileView.swift
-//  collegeApp
-//
-//  Created by Рауан Аблайхан on 20.09.2023.
-//
-
 import SwiftUI
 import Firebase
-
-extension String {
-    subscript(idx: Int) -> String {
-        String(self[index(startIndex, offsetBy: idx)].uppercased())
-    }
-}
 
 struct ProfileView: View {
     @Binding var email:String
     @Binding var pass:String
     @Binding var isLoggedIn:Bool
     
+    var name:String {
+        let components = email.split(separator: "@")
+        var name = ""
+        
+        if let firstComponents = components.first, firstComponents.count >= 2{
+            name += String(firstComponents.prefix(2)).uppercased()
+        }
+       else if let secondComponents = components.last, secondComponents.count >= 2{
+           name += String(secondComponents.prefix(2)).lowercased()
+        }
+        
+        return name
+    }
     
     var body: some View {
         NavigationView {
@@ -29,8 +29,6 @@ struct ProfileView: View {
                 VStack(alignment: .center, spacing: 40){
                     //MARK: - personInfo
                     VStack(alignment: .center,spacing: 5){
-                        let name = String(email[email.startIndex]).uppercased() + String(email.split(separator: "")[1][email.split(separator: "")[1].startIndex]).uppercased()
-                        
                         ZStack {
                             Circle().frame(width: 50, height: 50)
                             Text(name).foregroundStyle(Color(UIColor.white))
@@ -61,7 +59,6 @@ struct ProfileView: View {
                             do{
                                 try Auth.auth().signOut()
                                 self.isLoggedIn = false
-                                print("okkk")
                             } catch let error{
                                 print("Ошибка при выходе из аккаунта: \(error.localizedDescription)")
                             }
@@ -84,9 +81,3 @@ struct ProfileView: View {
        
     }
 }
-
-//struct ProfileView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ProfileView(email: .constant("raun@gmail"), pass: .constant("adsad"), user: People.init(email: "rayn", password: "adsads"))
-//    }
-//}

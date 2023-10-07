@@ -1,10 +1,3 @@
-//
-//  AudioComponent.swift
-//  collegeApp
-//
-//  Created by Рауан Аблайхан on 25.09.2023.
-//
-
 import SwiftUI
 import AVKit
 
@@ -31,7 +24,6 @@ struct AudioComponent: View {
             Spacer()
                 
                    if let player = audioPlayer {
-                       // Виджет слайдера для дорожки времени
                        Slider(value: $currentTime, in: 0...totalTime)
                            .padding(.horizontal)
                            .onAppear {
@@ -80,7 +72,6 @@ struct AudioComponent: View {
                }
            }
 
-           // Функция для форматирования времени в формат "мм:сс"
            func formatTime(_ time: Double) -> String {
                let minutes = Int(time) / 60
                let seconds = Int(time) % 60

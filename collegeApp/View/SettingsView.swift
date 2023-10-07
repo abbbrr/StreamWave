@@ -1,10 +1,3 @@
-//
-//  SettingsView.swift
-//  collegeApp
-//
-//  Created by Рауан Аблайхан on 26.09.2023.
-//
-
 import SwiftUI
 
 struct SettingsView: View {
@@ -14,7 +7,7 @@ struct SettingsView: View {
     @State private var oldPass = ""
     @State private var newPass = ""
     @State private var copyNewPass = ""
-    @State private var  text = " "
+    @State private var text = " "
     
     @Binding var pass:String
     

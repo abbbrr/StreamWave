@@ -1,10 +1,3 @@
-//
-//  MainView.swift
-//  collegeApp
-//
-//  Created by Рауан Аблайхан on 10.09.2023.
-//
-
 import SwiftUI
 
 struct MainView: View {
@@ -29,9 +22,9 @@ struct MainView: View {
                                 .font(.title)
                                 .bold()
                                 .foregroundColor(.white)
-                                .frame(maxWidth: .infinity, alignment: .leading) // Выравнивание по левому краю
-                                .padding(.top, 20) // Отступ сверху
-                                .padding(.leading, 20) // Отступ слева
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(.top, 20)
+                                .padding(.leading, 20)
                         }.padding(.bottom)
 
                         Spacer()
@@ -60,7 +53,7 @@ struct MainView: View {
                                 }
                             }
                             .padding(.horizontal)
-                            .padding()
+                            .padding(20)
                             .onAppear(){
                                 firestoreManager.fetchData()
                             }

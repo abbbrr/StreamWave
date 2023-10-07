@@ -1,10 +1,3 @@
-//
-//  PageScreenView.swift
-//  collegeApp
-//
-//  Created by Рауан Аблайхан on 20.09.2023.
-//
-
 import SwiftUI
 import AVKit
 import URLImage
@@ -56,7 +49,6 @@ struct PageScreenView: View {
                           .foregroundColor(Color(red: 1, green: 0.6, blue: 0.46))
                           .frame(width: 170, alignment: .top)
                         
-                        // H2
                         Text(podcast.name)
                           .font(
                             Font.custom("Cera Pro", size: 18)
@@ -65,7 +57,7 @@ struct PageScreenView: View {
                           .multilineTextAlignment(.center)
                           .foregroundColor(Color(red: 0.94, green: 0.91, blue: 0.9))
                         
-                        Additional()
+                        Additional(time: podcast.time, people: podcast.people)
                             .padding(.top)
                     }
                     .padding()
@@ -116,7 +108,9 @@ struct PageScreenView: View {
                         } label: {
                             Text("ADD to like")
                                 .foregroundColor(.white)
-                                .font(.title)
+                                .padding()
+                                .background(Color.blue)
+                                .cornerRadius(10)
                         }
 
                         
@@ -199,7 +193,7 @@ struct PageScreenView: View {
                 }
                 .padding()
                 //end vstak
-
+ 
             }
             //end scrollview
         }

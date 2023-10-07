@@ -1,10 +1,3 @@
-//
-//  AdditionalSecond.swift
-//  collegeApp
-//
-//  Created by Рауан Аблайхан on 22.09.2023.
-//
-
 import SwiftUI
 
 struct AdditionalSecond: View {

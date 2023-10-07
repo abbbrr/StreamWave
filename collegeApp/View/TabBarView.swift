@@ -6,7 +6,6 @@ struct TabBarView: View {
     @Binding var email:String
     @Binding var pass:String
     @Binding var isLoggedIn: Bool
-//    @StateObject var likeViewModel = LikeViewModel()
     
     var body: some View {
         TabView{
@@ -14,11 +13,10 @@ struct TabBarView: View {
                 .tabItem {
                     Label("Рекомендации", systemImage: "lightbulb")
                 }
-            LikeView()
+            LikeView(email:$email)
                 .tabItem {
                     Label("Мои книги", systemImage: "book")
                 }
-//                .environmentObject(likeViewModel)
             
             ProfileView(email:$email, pass:$pass, isLoggedIn: $isLoggedIn)
                 .tabItem {

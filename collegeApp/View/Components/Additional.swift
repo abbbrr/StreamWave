@@ -1,13 +1,9 @@
-//
-//  Additional.swift
-//  collegeApp
-//
-//  Created by Рауан Аблайхан on 20.09.2023.
-//
-
 import SwiftUI
 
 struct Additional: View {
+     var time:String
+     var people:Int
+    
     var body: some View {
         HStack(spacing: 50){
             VStack{
@@ -28,7 +24,7 @@ struct Additional: View {
                     
                 }
 
-                Text("00:27:27")
+                Text("\(time)")
                   .font(
                     Font.custom("PT Root UI", size: 16)
                       .weight(.medium)
@@ -57,7 +53,7 @@ struct Additional: View {
                     
                 }
 
-                Text("2500 чел")
+                Text("\(people) чел")
                   .font(
                     Font.custom("PT Root UI", size: 16)
                       .weight(.medium)
@@ -70,11 +66,5 @@ struct Additional: View {
             }
            
         }
-    }
-}
-
-struct Additional_Previews: PreviewProvider {
-    static var previews: some View {
-        Additional()
     }
 }

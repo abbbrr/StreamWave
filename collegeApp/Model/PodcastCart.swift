@@ -1,16 +1,9 @@
-//
-//  PodcastCart.swift
-//  collegeApp
-//
-//  Created by Рауан Аблайхан on 12.09.2023.
-//
-
 import Foundation
 import Firebase
 import FirebaseFirestore
 import RealmSwift
 
-struct PodcastCart: Identifiable{
+struct PodcastCart: Identifiable, Encodable, Decodable{
     var id: String = UUID().uuidString
     let name: String
     let image:String
@@ -19,4 +12,7 @@ struct PodcastCart: Identifiable{
     var videoUrl:String?
     var audioUrl:String?
     var raiting: Int
+    var time: String
+    var people: Int
 }
+
