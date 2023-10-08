@@ -117,7 +117,7 @@ struct PageScreenView: View {
                     HStack{
                         //button 1
                         Button {
-                            self.isShowingVideo.toggle()
+//                            self.isShowingVideo.toggle()
                         } label: {
                             HStack{
                                 Image(systemName: "airplayvideo")
@@ -139,7 +139,7 @@ struct PageScreenView: View {
                         
                         //button 2
                         Button {
-                            self.isShowingAudio.toggle()
+//                            self.isShowingAudio.toggle()
                         } label: {
                             HStack{
                                 Image(systemName: "music.mic")
