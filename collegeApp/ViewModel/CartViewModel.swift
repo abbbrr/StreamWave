@@ -32,7 +32,7 @@ class CartViewModel:ObservableObject{
                 let image = data["image"] as? String ?? ""
                 let author = data["author"] as? String ?? ""
                 let information = data["information"] as? String ?? ""
-                let videoUrl = data["videoUrl"] as? String ?? ""
+                let videoUrl = data["videoUrl"] as? URL ?? nil
                 let audioUrl = data["audioUrl"] as? String ?? ""
                 let raiting = data["raiting"] as? Int ?? 0
                 let time = data["time"] as? String ?? ""

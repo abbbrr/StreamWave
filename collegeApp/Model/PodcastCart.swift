@@ -9,7 +9,7 @@ struct PodcastCart: Identifiable, Encodable, Decodable{
     let image:String
     let author: String
     var information: String
-    var videoUrl:String?
+    var videoUrl:URL?
     var audioUrl:String?
     var raiting: Int
     var time: String

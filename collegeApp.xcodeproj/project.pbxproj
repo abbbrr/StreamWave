@@ -18,7 +18,6 @@
 		641CED172AB0A98D00D14BBA /* PodcastCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641CED162AB0A98D00D14BBA /* PodcastCart.swift */; };
 		641CED192AB0B28F00D14BBA /* RaitingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641CED182AB0B28F00D14BBA /* RaitingView.swift */; };
 		6424771F2ABBCACB005348F6 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6424771E2ABBCACB005348F6 /* CartViewModel.swift */; };
-		643AEF9A2AC1901300048564 /* AudioComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643AEF992AC1901300048564 /* AudioComponent.swift */; };
 		643EB5F82ABF7E3500E3ABB7 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 643EB5F72ABF7E3500E3ABB7 /* URLImage */; };
 		647472472ACE998A00EFC7F7 /* LikeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647472462ACE998A00EFC7F7 /* LikeViewModel.swift */; };
 		64749D932AAC647B00116AE5 /* collegeAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64749D922AAC647B00116AE5 /* collegeAppApp.swift */; };
@@ -40,7 +39,6 @@
 		649B3D642ABB14A500EDD97D /* TableList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649B3D632ABB14A500EDD97D /* TableList.swift */; };
 		64A2B8242ACAB92200AFB167 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 64A2B8232ACAB92200AFB167 /* Realm */; };
 		64A2B8262ACAB92200AFB167 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 64A2B8252ACAB92200AFB167 /* RealmSwift */; };
-		64B438952ABC3286004F14DE /* YTView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B438942ABC3286004F14DE /* YTView.swift */; };
 		64C51DEA2AADDB0D005D9A2A /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C51DE92AADDB0D005D9A2A /* People.swift */; };
 		64C51DEC2AAF4DBC005D9A2A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 64C51DEB2AAF4DBC005D9A2A /* GoogleService-Info.plist */; };
 		64C51DF92AAF4F3C005D9A2A /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C51DF82AAF4F3C005D9A2A /* AuthViewModel.swift */; };
@@ -70,7 +68,6 @@
 		641CED162AB0A98D00D14BBA /* PodcastCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastCart.swift; sourceTree = "<group>"; };
 		641CED182AB0B28F00D14BBA /* RaitingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaitingView.swift; sourceTree = "<group>"; };
 		6424771E2ABBCACB005348F6 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
-		643AEF992AC1901300048564 /* AudioComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioComponent.swift; sourceTree = "<group>"; };
 		647472462ACE998A00EFC7F7 /* LikeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeViewModel.swift; sourceTree = "<group>"; };
 		64749D8F2AAC647B00116AE5 /* collegeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = collegeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64749D922AAC647B00116AE5 /* collegeAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = collegeAppApp.swift; sourceTree = "<group>"; };
@@ -92,7 +89,6 @@
 		649B3D5B2ABAD01900EDD97D /* Additional.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Additional.swift; sourceTree = "<group>"; };
 		649B3D5F2ABB095800EDD97D /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		649B3D632ABB14A500EDD97D /* TableList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableList.swift; sourceTree = "<group>"; };
-		64B438942ABC3286004F14DE /* YTView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YTView.swift; sourceTree = "<group>"; };
 		64C51DE92AADDB0D005D9A2A /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
 		64C51DEB2AAF4DBC005D9A2A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		64C51DF82AAF4F3C005D9A2A /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
@@ -133,14 +129,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		643AEF982AC18FFD00048564 /* Audio */ = {
-			isa = PBXGroup;
-			children = (
-				643AEF992AC1901300048564 /* AudioComponent.swift */,
-			);
-			path = Audio;
-			sourceTree = "<group>";
-		};
 		64749D862AAC647B00116AE5 = {
 			isa = PBXGroup;
 			children = (
@@ -203,8 +191,6 @@
 		64749DBC2AAC99A900116AE5 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				643AEF982AC18FFD00048564 /* Audio */,
-				64B438932ABC325F004F14DE /* YTComponent */,
 				64749DC52AAD0E0300116AE5 /* Components */,
 				64749D942AAC647B00116AE5 /* ContentView.swift */,
 				6494A7782AC2616800160191 /* TabBarView.swift */,
@@ -249,14 +235,6 @@
 				6417B34E2ABD56D20006C707 /* AdditionalSecond.swift */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		64B438932ABC325F004F14DE /* YTComponent */ = {
-			isa = PBXGroup;
-			children = (
-				64B438942ABC3286004F14DE /* YTView.swift */,
-			);
-			path = YTComponent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,13 +389,11 @@
 				649B3D5C2ABAD01900EDD97D /* Additional.swift in Sources */,
 				64749D952AAC647B00116AE5 /* ContentView.swift in Sources */,
 				64749DC72AAD0E2800116AE5 /* KinoCard.swift in Sources */,
-				643AEF9A2AC1901300048564 /* AudioComponent.swift in Sources */,
 				64749DC22AAD047E00116AE5 /* AuthView.swift in Sources */,
 				6417B34D2ABD563B0006C707 /* HelloView.swift in Sources */,
 				64C51DF92AAF4F3C005D9A2A /* AuthViewModel.swift in Sources */,
 				64749DC42AAD0DE200116AE5 /* MainView.swift in Sources */,
 				64749D932AAC647B00116AE5 /* collegeAppApp.swift in Sources */,
-				64B438952ABC3286004F14DE /* YTView.swift in Sources */,
 				64CDB3C82ACB2B0E00E9D905 /* LikeView.swift in Sources */,
 				6494A7792AC2616800160191 /* TabBarView.swift in Sources */,
 				649B3D5A2ABACD3A00EDD97D /* PageScreenView.swift in Sources */,
@@ -648,6 +624,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y7MSY46LM7;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MARKETING_VERSION = 1.0;
@@ -667,6 +644,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y7MSY46LM7;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				MARKETING_VERSION = 1.0;
@@ -685,6 +663,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = rest.collegeAppUITests;
@@ -700,8 +679,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = Y7MSY46LM7;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = rest.collegeAppUITests;

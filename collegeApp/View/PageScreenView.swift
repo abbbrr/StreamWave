@@ -5,9 +5,6 @@ import URLImage
 struct PageScreenView: View {
     @State private var isShowingSettings = false
     @State private var isShowingText = false
-    @State private var isShowingVideo = false
-    @State private var isShowingAudio = false
-
     
     @Binding var email:String
   
@@ -161,34 +158,18 @@ struct PageScreenView: View {
                             .background(Color(red: 1, green: 0.6, blue: 0.46))
                             .cornerRadius(10)
                         }
+                    }
+                    VStack{
+                        Text(podcast.name)
+                            .foregroundColor(.white)
+                            .font(.title3)
+                            .bold()
+
 
                     }
+                    .padding(.top)
+                    .padding(.bottom)
                     
-
-   
-                    if isShowingVideo{
-                        VStack{
-                            Text(podcast.name)
-                                .foregroundColor(.white)
-                                .font(.title3)
-                                .bold()
-                            YTView(ID: "\(podcast.videoUrl)" )
-                        }
-                        .padding(.top)
-                        .padding(.bottom)
-                    }
-                    
-                    if isShowingAudio{
-                        VStack{
-                            Text(podcast.name)
-                                .foregroundColor(.white)
-                                .font(.title3)
-                                .bold()
-                            AudioComponent(audioURL: URL(string: "\( podcast.audioUrl)"))
-                        }
-                        .padding(.top,20)
-                        .padding(.bottom)
-                    }
                     
                 }
                 .padding()
