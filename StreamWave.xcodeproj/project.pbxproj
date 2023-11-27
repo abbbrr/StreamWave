@@ -14,11 +14,11 @@
 		640552C82AC5466F0043DC7C /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 640552C72AC5466F0043DC7C /* FirebaseFirestoreSwift */; };
 		640552CA2AC5466F0043DC7C /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 640552C92AC5466F0043DC7C /* FirebaseFunctions */; };
 		6417B34D2ABD563B0006C707 /* HelloView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6417B34C2ABD563B0006C707 /* HelloView.swift */; };
-		6417B34F2ABD56D20006C707 /* AdditionalSecond.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6417B34E2ABD56D20006C707 /* AdditionalSecond.swift */; };
 		641CED172AB0A98D00D14BBA /* PodcastCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641CED162AB0A98D00D14BBA /* PodcastCart.swift */; };
 		641CED192AB0B28F00D14BBA /* RaitingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641CED182AB0B28F00D14BBA /* RaitingView.swift */; };
 		6424771F2ABBCACB005348F6 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6424771E2ABBCACB005348F6 /* CartViewModel.swift */; };
 		643EB5F82ABF7E3500E3ABB7 /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = 643EB5F72ABF7E3500E3ABB7 /* URLImage */; };
+		6450AEAC2B0F9F20002A5F57 /* SupportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6450AEAB2B0F9F20002A5F57 /* SupportView.swift */; };
 		647472472ACE998A00EFC7F7 /* LikeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647472462ACE998A00EFC7F7 /* LikeViewModel.swift */; };
 		64749D932AAC647B00116AE5 /* collegeAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64749D922AAC647B00116AE5 /* collegeAppApp.swift */; };
 		64749D952AAC647B00116AE5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64749D942AAC647B00116AE5 /* ContentView.swift */; };
@@ -64,19 +64,19 @@
 
 /* Begin PBXFileReference section */
 		6417B34C2ABD563B0006C707 /* HelloView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelloView.swift; sourceTree = "<group>"; };
-		6417B34E2ABD56D20006C707 /* AdditionalSecond.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdditionalSecond.swift; sourceTree = "<group>"; };
 		641CED162AB0A98D00D14BBA /* PodcastCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastCart.swift; sourceTree = "<group>"; };
 		641CED182AB0B28F00D14BBA /* RaitingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaitingView.swift; sourceTree = "<group>"; };
 		6424771E2ABBCACB005348F6 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		6450AEAB2B0F9F20002A5F57 /* SupportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupportView.swift; sourceTree = "<group>"; };
 		647472462ACE998A00EFC7F7 /* LikeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeViewModel.swift; sourceTree = "<group>"; };
-		64749D8F2AAC647B00116AE5 /* collegeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = collegeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		64749D8F2AAC647B00116AE5 /* StreamWave.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StreamWave.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64749D922AAC647B00116AE5 /* collegeAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = collegeAppApp.swift; sourceTree = "<group>"; };
 		64749D942AAC647B00116AE5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		64749D962AAC647C00116AE5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64749D992AAC647C00116AE5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		64749D9F2AAC647C00116AE5 /* collegeAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = collegeAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		64749D9F2AAC647C00116AE5 /* StreamWaveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StreamWaveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		64749DA32AAC647C00116AE5 /* collegeAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = collegeAppTests.swift; sourceTree = "<group>"; };
-		64749DA92AAC647C00116AE5 /* collegeAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = collegeAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		64749DA92AAC647C00116AE5 /* StreamWaveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StreamWaveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		64749DAD2AAC647C00116AE5 /* collegeAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = collegeAppUITests.swift; sourceTree = "<group>"; };
 		64749DAF2AAC647C00116AE5 /* collegeAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = collegeAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		64749DC12AAD047E00116AE5 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
@@ -142,9 +142,9 @@
 		64749D902AAC647B00116AE5 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				64749D8F2AAC647B00116AE5 /* collegeApp.app */,
-				64749D9F2AAC647C00116AE5 /* collegeAppTests.xctest */,
-				64749DA92AAC647C00116AE5 /* collegeAppUITests.xctest */,
+				64749D8F2AAC647B00116AE5 /* StreamWave.app */,
+				64749D9F2AAC647C00116AE5 /* StreamWaveTests.xctest */,
+				64749DA92AAC647C00116AE5 /* StreamWaveUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -194,13 +194,14 @@
 				64749DC52AAD0E0300116AE5 /* Components */,
 				64749D942AAC647B00116AE5 /* ContentView.swift */,
 				6494A7782AC2616800160191 /* TabBarView.swift */,
-				64749DC12AAD047E00116AE5 /* AuthView.swift */,
 				64749DC32AAD0DE100116AE5 /* MainView.swift */,
+				64749DC12AAD047E00116AE5 /* AuthView.swift */,
 				64CDB3C72ACB2B0E00E9D905 /* LikeView.swift */,
 				649B3D592ABACD3A00EDD97D /* PageScreenView.swift */,
 				6494A77A2AC2650E00160191 /* SettingsView.swift */,
 				6417B34C2ABD563B0006C707 /* HelloView.swift */,
 				649B3D5F2ABB095800EDD97D /* ProfileView.swift */,
+				6450AEAB2B0F9F20002A5F57 /* SupportView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -232,7 +233,6 @@
 				641CED182AB0B28F00D14BBA /* RaitingView.swift */,
 				649B3D5B2ABAD01900EDD97D /* Additional.swift */,
 				649B3D632ABB14A500EDD97D /* TableList.swift */,
-				6417B34E2ABD56D20006C707 /* AdditionalSecond.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -240,9 +240,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		64749D8E2AAC647B00116AE5 /* collegeApp */ = {
+		64749D8E2AAC647B00116AE5 /* StreamWave */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 64749DB32AAC647C00116AE5 /* Build configuration list for PBXNativeTarget "collegeApp" */;
+			buildConfigurationList = 64749DB32AAC647C00116AE5 /* Build configuration list for PBXNativeTarget "StreamWave" */;
 			buildPhases = (
 				64749D8B2AAC647B00116AE5 /* Sources */,
 				64749D8C2AAC647B00116AE5 /* Frameworks */,
@@ -252,7 +252,7 @@
 			);
 			dependencies = (
 			);
-			name = collegeApp;
+			name = StreamWave;
 			packageProductDependencies = (
 				643EB5F72ABF7E3500E3ABB7 /* URLImage */,
 				640552BF2AC5466F0043DC7C /* FirebaseAuth */,
@@ -265,12 +265,12 @@
 				64A2B8252ACAB92200AFB167 /* RealmSwift */,
 			);
 			productName = collegeApp;
-			productReference = 64749D8F2AAC647B00116AE5 /* collegeApp.app */;
+			productReference = 64749D8F2AAC647B00116AE5 /* StreamWave.app */;
 			productType = "com.apple.product-type.application";
 		};
-		64749D9E2AAC647C00116AE5 /* collegeAppTests */ = {
+		64749D9E2AAC647C00116AE5 /* StreamWaveTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 64749DB62AAC647C00116AE5 /* Build configuration list for PBXNativeTarget "collegeAppTests" */;
+			buildConfigurationList = 64749DB62AAC647C00116AE5 /* Build configuration list for PBXNativeTarget "StreamWaveTests" */;
 			buildPhases = (
 				64749D9B2AAC647C00116AE5 /* Sources */,
 				64749D9C2AAC647C00116AE5 /* Frameworks */,
@@ -281,14 +281,14 @@
 			dependencies = (
 				64749DA12AAC647C00116AE5 /* PBXTargetDependency */,
 			);
-			name = collegeAppTests;
+			name = StreamWaveTests;
 			productName = collegeAppTests;
-			productReference = 64749D9F2AAC647C00116AE5 /* collegeAppTests.xctest */;
+			productReference = 64749D9F2AAC647C00116AE5 /* StreamWaveTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		64749DA82AAC647C00116AE5 /* collegeAppUITests */ = {
+		64749DA82AAC647C00116AE5 /* StreamWaveUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 64749DB92AAC647C00116AE5 /* Build configuration list for PBXNativeTarget "collegeAppUITests" */;
+			buildConfigurationList = 64749DB92AAC647C00116AE5 /* Build configuration list for PBXNativeTarget "StreamWaveUITests" */;
 			buildPhases = (
 				64749DA52AAC647C00116AE5 /* Sources */,
 				64749DA62AAC647C00116AE5 /* Frameworks */,
@@ -299,9 +299,9 @@
 			dependencies = (
 				64749DAB2AAC647C00116AE5 /* PBXTargetDependency */,
 			);
-			name = collegeAppUITests;
+			name = StreamWaveUITests;
 			productName = collegeAppUITests;
-			productReference = 64749DA92AAC647C00116AE5 /* collegeAppUITests.xctest */;
+			productReference = 64749DA92AAC647C00116AE5 /* StreamWaveUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -327,7 +327,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 64749D8A2AAC647B00116AE5 /* Build configuration list for PBXProject "collegeApp" */;
+			buildConfigurationList = 64749D8A2AAC647B00116AE5 /* Build configuration list for PBXProject "StreamWave" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -345,9 +345,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				64749D8E2AAC647B00116AE5 /* collegeApp */,
-				64749D9E2AAC647C00116AE5 /* collegeAppTests */,
-				64749DA82AAC647C00116AE5 /* collegeAppUITests */,
+				64749D8E2AAC647B00116AE5 /* StreamWave */,
+				64749D9E2AAC647C00116AE5 /* StreamWaveTests */,
+				64749DA82AAC647C00116AE5 /* StreamWaveUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -384,7 +384,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6417B34F2ABD56D20006C707 /* AdditionalSecond.swift in Sources */,
 				6494A77B2AC2650E00160191 /* SettingsView.swift in Sources */,
 				649B3D5C2ABAD01900EDD97D /* Additional.swift in Sources */,
 				64749D952AAC647B00116AE5 /* ContentView.swift in Sources */,
@@ -397,6 +396,7 @@
 				64CDB3C82ACB2B0E00E9D905 /* LikeView.swift in Sources */,
 				6494A7792AC2616800160191 /* TabBarView.swift in Sources */,
 				649B3D5A2ABACD3A00EDD97D /* PageScreenView.swift in Sources */,
+				6450AEAC2B0F9F20002A5F57 /* SupportView.swift in Sources */,
 				641CED192AB0B28F00D14BBA /* RaitingView.swift in Sources */,
 				64C51DEA2AADDB0D005D9A2A /* People.swift in Sources */,
 				649B3D602ABB095800EDD97D /* ProfileView.swift in Sources */,
@@ -430,12 +430,12 @@
 /* Begin PBXTargetDependency section */
 		64749DA12AAC647C00116AE5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 64749D8E2AAC647B00116AE5 /* collegeApp */;
+			target = 64749D8E2AAC647B00116AE5 /* StreamWave */;
 			targetProxy = 64749DA02AAC647C00116AE5 /* PBXContainerItemProxy */;
 		};
 		64749DAB2AAC647C00116AE5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 64749D8E2AAC647B00116AE5 /* collegeApp */;
+			target = 64749D8E2AAC647B00116AE5 /* StreamWave */;
 			targetProxy = 64749DAA2AAC647C00116AE5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -572,13 +572,13 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = rest.collegeApp;
+				PRODUCT_BUNDLE_IDENTIFIER = rest.StreamWave;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -603,13 +603,13 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = rest.collegeApp;
+				PRODUCT_BUNDLE_IDENTIFIER = rest.StreamWave;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -633,7 +633,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/collegeApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/collegeApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StreamWave.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/StreamWave";
 			};
 			name = Debug;
 		};
@@ -653,7 +653,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/collegeApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/collegeApp";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StreamWave.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/StreamWave";
 			};
 			name = Release;
 		};
@@ -697,7 +697,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		64749D8A2AAC647B00116AE5 /* Build configuration list for PBXProject "collegeApp" */ = {
+		64749D8A2AAC647B00116AE5 /* Build configuration list for PBXProject "StreamWave" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				64749DB12AAC647C00116AE5 /* Debug */,
@@ -706,7 +706,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		64749DB32AAC647C00116AE5 /* Build configuration list for PBXNativeTarget "collegeApp" */ = {
+		64749DB32AAC647C00116AE5 /* Build configuration list for PBXNativeTarget "StreamWave" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				64749DB42AAC647C00116AE5 /* Debug */,
@@ -715,7 +715,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		64749DB62AAC647C00116AE5 /* Build configuration list for PBXNativeTarget "collegeAppTests" */ = {
+		64749DB62AAC647C00116AE5 /* Build configuration list for PBXNativeTarget "StreamWaveTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				64749DB72AAC647C00116AE5 /* Debug */,
@@ -724,7 +724,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		64749DB92AAC647C00116AE5 /* Build configuration list for PBXNativeTarget "collegeAppUITests" */ = {
+		64749DB92AAC647C00116AE5 /* Build configuration list for PBXNativeTarget "StreamWaveUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				64749DBA2AAC647C00116AE5 /* Debug */,

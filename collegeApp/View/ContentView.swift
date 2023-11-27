@@ -1,13 +1,27 @@
-//
-//  ContentView.swift
-//  collegeApp
-//
-//  Created by Рауан Аблайхан on 09.09.2023.
-//
-
 import SwiftUI
 import Firebase
 import FirebaseAuth
+import SystemConfiguration
+
+
+class InternetConnection{
+    static func isConnected() -> Bool {
+            guard let reachability = SCNetworkReachabilityCreateWithName(nil, "www.apple.com") else {
+                return false
+            }
+ 
+            var flags = SCNetworkReachabilityFlags()
+            SCNetworkReachabilityGetFlags(reachability, &flags)
+
+            let isReachable = flags.contains(.reachable)
+            let needsConnection = flags.contains(.connectionRequired)
+            let canConnectAutomatically = flags.contains(.connectionOnDemand) || flags.contains(.connectionOnTraffic)
+            let canConnectWithoutUserInteraction = canConnectAutomatically && !flags.contains(.interventionRequired)
+
+            return isReachable && (!needsConnection || canConnectWithoutUserInteraction)
+        }
+}
+
 
 
 struct ContentView: View {
@@ -20,21 +34,40 @@ struct ContentView: View {
     @EnvironmentObject var likeViewModel: LikeViewModel
     
     var body: some View {
-        NavigationView {
-            if isLoggedIn {
-                TabBarView(email:$email, pass:$pass, isLoggedIn: $isLoggedIn)
-            }else{
-                HelloView(isLoggedIn: $isLoggedIn, email: $email, pass:$pass)
+        if InternetConnection.isConnected(){
+            NavigationView {
+                if isLoggedIn {
+                    TabBarView(email:$email, pass:$pass, isLoggedIn: $isLoggedIn)
+                }else{
+                    HelloView(isLoggedIn: $isLoggedIn, email: $email, pass:$pass, checkInternet: false)
+                }
+            }
+            .onAppear{
+                if let user = Auth.auth().currentUser{
+                    self.email = user.email ?? ""
+                    self.isLoggedIn = true
+                    
+                    likeViewModel.loadLikedPodcasts()
+                }
+            }
+        } else{
+            NavigationView {
+                if isLoggedIn {
+                    TabBarView(email:$email, pass:$pass, isLoggedIn: $isLoggedIn)
+                }else{
+                    HelloView(isLoggedIn: $isLoggedIn, email: $email, pass:$pass, checkInternet: true)
+                }
+            }
+            .onAppear{
+                if let user = Auth.auth().currentUser{
+                    self.email = user.email ?? ""
+                    self.isLoggedIn = true
+                    
+                    likeViewModel.loadLikedPodcasts()
+                }
             }
         }
-        .onAppear{
-            if let user = Auth.auth().currentUser{
-                self.email = user.email ?? ""
-                self.isLoggedIn = true
-                
-                likeViewModel.loadLikedPodcasts()
-            }
-        }
+       
     }
 }
 

@@ -2,9 +2,26 @@ import SwiftUI
 import AVKit
 import URLImage
 
+struct VideoPlayerView: UIViewControllerRepresentable {
+    var videoURL: URL
+
+    func makeUIViewController(context: Context) -> AVPlayerViewController {
+        let player = AVPlayer(url: videoURL)
+        let playerViewController = AVPlayerViewController()
+        playerViewController.player = player
+        return playerViewController
+    }
+
+    func updateUIViewController(_ uiViewController: AVPlayerViewController, context: Context) {
+        // Update code here if needed
+    }
+}
+
 struct PageScreenView: View {
     @State private var isShowingSettings = false
     @State private var isShowingText = false
+    @State private var isShowingVideo = false
+    @State private var isShowMusic = false
     
     @Binding var email:String
   
@@ -12,7 +29,9 @@ struct PageScreenView: View {
     @EnvironmentObject var firestoreManager:CartViewModel
     @EnvironmentObject var likeViewModel: LikeViewModel
     
-
+  
+    @State private var player: AVPlayer?
+    @State private var isPlaying = false
     
     var body: some View {
         ZStack{
@@ -53,6 +72,15 @@ struct PageScreenView: View {
                           )
                           .multilineTextAlignment(.center)
                           .foregroundColor(Color(red: 0.94, green: 0.91, blue: 0.9))
+                        
+                        Text(podcast.genre)
+                          .font(
+                            Font.custom("Cera Pro", size: 16)
+                              .weight(.bold)
+                          )
+                          .multilineTextAlignment(.center)
+                          .foregroundColor(.gray)
+
                         
                         Additional(time: podcast.time, people: podcast.people)
                             .padding(.top)
@@ -117,7 +145,7 @@ struct PageScreenView: View {
                     HStack{
                         //button 1
                         Button {
-//                            self.isShowingVideo.toggle()
+                            self.isShowingVideo.toggle()
                         } label: {
                             HStack{
                                 Image(systemName: "airplayvideo")
@@ -137,9 +165,10 @@ struct PageScreenView: View {
                             .cornerRadius(10)
                         }
                         
+                        
                         //button 2
                         Button {
-//                            self.isShowingAudio.toggle()
+                            self.isShowMusic.toggle()
                         } label: {
                             HStack{
                                 Image(systemName: "music.mic")
@@ -158,22 +187,92 @@ struct PageScreenView: View {
                             .background(Color(red: 1, green: 0.6, blue: 0.46))
                             .cornerRadius(10)
                         }
+                        
                     }
-                    VStack{
-                        Text(podcast.name)
-                            .foregroundColor(.white)
-                            .font(.title3)
-                            .bold()
-
-
+                    
+                    if isShowingVideo{
+                        VStack{
+                                Text(podcast.name)
+                                    .foregroundColor(.white)
+                                    .font(.title3)
+                                    .bold()
+                           
+                            if let videoURL = podcast.videoUrl {
+                                VideoPlayerView(videoURL: videoURL)
+                                    .edgesIgnoringSafeArea(.all)
+                            } else {
+                                VStack{
+                                    Text("Видео недоступно")
+                                        .font(.title3)
+                                        .foregroundColor(.white)
+                                }
+                                .padding(.vertical, 20)
+                            }
+                        }
                     }
-                    .padding(.top)
-                    .padding(.bottom)
                     
-                    
+                    if isShowMusic{
+                        VStack{
+                            Text(podcast.name)
+                                .foregroundColor(.white)
+                                .font(.title3)
+                                .bold()
+                            
+                            HStack {
+                                Button(action: {
+                                    if let audioURLString = podcast.audioUrl, let audioURL = URL(string: audioURLString) {
+                                        if isPlaying {
+                                            self.player?.pause()
+                                        } else {
+                                            self.player = AVPlayer(url: audioURL)
+                                            self.player?.play()
+                                        }
+                                        isPlaying.toggle()
+                                    }
+                                }) {
+                                    Image(systemName: isPlaying ? "pause.circle" : "play.circle")
+                                        .font(.largeTitle)
+                                        .foregroundColor(Color(red: 0.16, green: 0.16, blue: 0.16))
+                                }
+                                .padding()
+//                                .background(Color(red: 1, green: 0.6, blue: 0.46))    
+                                .cornerRadius(10)
+
+                                Button(action: {
+                                    if let audioURLString = podcast.audioUrl, let _ = URL(string: audioURLString) {
+                                        self.player?.pause()
+                                        isPlaying = false
+                                    }
+                                }) {
+                                    Image(systemName: "stop.circle")
+                                        .font(.largeTitle)
+                                        .foregroundColor(Color(red: 0.16, green: 0.16, blue: 0.16))
+                                }
+                                .padding()
+//                                .background(Color(red: 1, green: 0.6, blue: 0.46))
+                                .cornerRadius(10)
+                            }
+                           
+                        }
+                        .padding(.top)
+                        .padding(.bottom)
+                        
+                    }
                 }
                 .padding()
                 //end vstak
+                .onChange(of: isShowingVideo) { newValue in
+                           // Hide music view when video view is shown
+                           if newValue {
+                               isShowMusic = false
+                           }
+                       }
+                .onChange(of: isShowMusic) { newValue in
+                    // Hide video view when music view is shown
+                    if newValue {
+                        isShowingVideo = false
+                    }
+                }
  
             }
             //end scrollview

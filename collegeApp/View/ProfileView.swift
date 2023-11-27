@@ -40,14 +40,8 @@ struct ProfileView: View {
                             .foregroundColor(Color(red: 0.94, green: 0.91, blue: 0.9))
                             .frame(width: 250)
 
-                        Text("Прочитано 6 книг за 7 недель")
-                          .font(Font.custom("PT Root UI", size: 16))
-                          .foregroundColor(Color(red: 0.62, green: 0.62, blue: 0.62))
                     }
                     .padding(.horizontal)
-                    
-                    //MARK: - infoReading
-                    AdditionalSecond()
                     
                     //MARK: -table
                     TableList(pass:$pass)
@@ -75,6 +69,7 @@ struct ProfileView: View {
                                 .stroke(Color(red: 0.27, green: 0.27, blue: 0.27), lineWidth: 1)
                             )
                     }
+                    Spacer()
                 }
             }
         }

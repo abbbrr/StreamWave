@@ -131,10 +131,12 @@ struct AuthView: View {
                                 viewModel.people.email = ""
                                 viewModel.people.password = ""
                                 login = false
+                                
                             } else{
                                 viewModel.people.email = ""
                                 viewModel.people.password = ""
                                 login = true
+                                errorText = false
                             }
                             } label: {
                                 Text(login ?  "Уже есть аккаунт?" : "Еще нет аккаунта?")
@@ -197,7 +199,8 @@ struct AuthView: View {
                             Text(error.localizedDescription)
                                 .foregroundColor(.red)
                         }
-                    }.padding(.top, 20)
+                    }
+                    .padding(.top, 20)
                     
                 }
                 .padding(.horizontal)

@@ -30,22 +30,22 @@ struct TableList: View {
                                .background(Color.gray)
                                .frame(width: .infinity)
                            
-                           HStack(spacing: 20){
-                               Image(systemName: "star")
-                                   .font(.title2)
-                                   .foregroundColor(Color(red: 1, green: 0.6, blue: 0.46))
-                
-                               Text("Поддержка")
-                                 .font(
-                                   Font.custom("PT Root UI", size: 16)
-                                     .weight(.medium)
-                                 )
-                                 .foregroundColor(Color(red: 0.94, green: 0.91, blue: 0.9))
-                               
-                           }
-                           .padding(10)
-                
+                           NavigationLink(destination: SupportView()) {
+                               HStack(spacing: 20){
+                                   Image(systemName: "star")
+                                       .font(.title2)
+                                       .foregroundColor(Color(red: 1, green: 0.6, blue: 0.46))
                     
+                                   Text("Поддержка")
+                                     .font(
+                                       Font.custom("PT Root UI", size: 16)
+                                         .weight(.medium)
+                                     )
+                                     .foregroundColor(Color(red: 0.94, green: 0.91, blue: 0.9))
+                                   
+                               }
+                               .padding(10)
+                           }
                    }
             
                }

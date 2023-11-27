@@ -25,7 +25,7 @@ struct LikeView: View {
                                 image
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
-                                    .frame(width: 100, height: 156.41293334960938)
+                                    .frame(width: 100, height: 140.41293334960938)
                                     .clipped()
                                     .cornerRadius(10)
                             }
@@ -77,10 +77,10 @@ struct LikeView: View {
                     }
                 }
                 .listStyle(PlainListStyle())
-                .navigationBarTitle("\(likeViewModel.likedPodcasts.count) подкастов", displayMode: .inline)
-                .padding()
+
+//                .padding()
             }
-            .padding()
+//            .padding()
         }
     }
 }

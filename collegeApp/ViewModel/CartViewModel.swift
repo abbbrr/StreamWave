@@ -37,9 +37,10 @@ class CartViewModel:ObservableObject{
                 let raiting = data["raiting"] as? Int ?? 0
                 let time = data["time"] as? String ?? ""
                 let people = data["people"] as? Int ?? 0
+                let genre = data["genre"] as? String ?? ""
                 let id = document.documentID
                                 
-                let podcast = PodcastCart(id: id, name: name, image: image, author: author, information: information, videoUrl: videoUrl, audioUrl: audioUrl, raiting: raiting, time: time, people: people)
+                let podcast = PodcastCart(id: id, name: name, image: image, author: author, information: information, videoUrl: videoUrl, audioUrl: audioUrl, raiting: raiting, time: time, people: people, genre: genre)
                 self.podcasts.append(podcast)
             }
             print("Data loaded successfully. Podcast count: \(self.podcasts.count)")

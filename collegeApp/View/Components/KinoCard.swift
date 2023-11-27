@@ -38,10 +38,11 @@ struct KinoCard: View {
                         .font(Font.custom("PT Root UI", size: 10))
                         .foregroundColor(Color(red: 0.62, green: 0.62, blue: 0.62))
                         .frame(maxWidth: .infinity, alignment: .leading)
+                    
                 }
                 .padding(.horizontal, 4)
             }
-            .padding(8)
+            .padding(10)
             .cornerRadius(10)
             .frame(width: 200)
 

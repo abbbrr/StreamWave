@@ -3,7 +3,7 @@ import Firebase
 import FirebaseFirestore
 import RealmSwift
 
-struct PodcastCart: Identifiable, Encodable, Decodable{
+struct PodcastCart: Identifiable, Encodable, Decodable,Hashable{
     var id: String = UUID().uuidString
     let name: String
     let image:String
@@ -14,5 +14,6 @@ struct PodcastCart: Identifiable, Encodable, Decodable{
     var raiting: Int
     var time: String
     var people: Int
+    let genre:String
 }
 
