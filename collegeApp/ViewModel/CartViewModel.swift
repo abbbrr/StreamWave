@@ -32,15 +32,16 @@ class CartViewModel:ObservableObject{
                 let image = data["image"] as? String ?? ""
                 let author = data["author"] as? String ?? ""
                 let information = data["information"] as? String ?? ""
-                let videoUrl = data["videoUrl"] as? URL ?? nil
+                let videoUrl = data["videoUrl"] as? String ?? nil
                 let audioUrl = data["audioUrl"] as? String ?? ""
                 let raiting = data["raiting"] as? Int ?? 0
                 let time = data["time"] as? String ?? ""
                 let people = data["people"] as? Int ?? 0
                 let genre = data["genre"] as? String ?? ""
+                var isLiked = data["isLiked"] as? Bool ?? false
                 let id = document.documentID
                                 
-                let podcast = PodcastCart(id: id, name: name, image: image, author: author, information: information, videoUrl: videoUrl, audioUrl: audioUrl, raiting: raiting, time: time, people: people, genre: genre)
+                let podcast = PodcastCart(id: id, name: name, image: image, author: author, information: information, videoUrl: videoUrl, audioUrl: audioUrl, raiting: raiting, time: time, people: people, genre: genre, isLiked: isLiked)
                 self.podcasts.append(podcast)
             }
             print("Data loaded successfully. Podcast count: \(self.podcasts.count)")
@@ -51,6 +52,7 @@ class CartViewModel:ObservableObject{
     func getPodcast(byID id: String) -> PodcastCart? {
         return podcasts.first { $0.id == id }
     }
+    
     
 }
 

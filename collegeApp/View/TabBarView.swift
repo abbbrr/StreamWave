@@ -12,15 +12,18 @@ struct TabBarView: View {
             MainView(email: $email)
                 .tabItem {
                     Label("Рекомендации", systemImage: "lightbulb")
+                        .foregroundColor(Color.red)
                 }
             LikeView(email:$email)
                 .tabItem {
-                    Label("Мои книги", systemImage: "book")
+                    Label("Избранные", systemImage: "book")
+                        .foregroundColor(Color.red)
                 }
             
             ProfileView(email:$email, pass:$pass, isLoggedIn: $isLoggedIn)
                 .tabItem {
                     Label("Профиль", systemImage: "person")
+                        .foregroundColor(Color.red)
                 }
         }
     }

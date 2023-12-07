@@ -16,6 +16,7 @@ struct LikeView: View {
                               .font(Font.custom("PT Root UI", size: 16).weight(.medium))
                               .foregroundColor(Color(red: 0.62, green: 0.62, blue: 0.62))
                               .padding(.horizontal)
+//                              .padding(.top,5)
                 
                 List(likeViewModel.likedPodcasts, id: \.id) { podcast in
                     NavigationLink(destination: PageScreenView(email: $email, podcast: podcast)) {

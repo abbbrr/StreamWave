@@ -13,7 +13,6 @@ struct SupportView: View {
                         .foregroundColor(.white)
                         .font(.title2)
                         .bold()
-                        
                 }.padding(.bottom)
                
                 VStack{
@@ -23,7 +22,7 @@ struct SupportView: View {
                                 .foregroundColor(.white)
                                 .font(.custom("Helvetica", size: 18))
                                 .bold()
-                            Text("Designger")
+                            Text("Desinger")
                                 .font(.system(size: 15))
                                 .foregroundColor(.gray)
                                 .bold()
@@ -32,7 +31,7 @@ struct SupportView: View {
                         Spacer()
                         
                         VStack{
-                            Text("adel@gmail.com")
+                            Text("kaskanovaadel@gmail.com")
                         }
                         
                     }.padding()
@@ -52,7 +51,7 @@ struct SupportView: View {
                         Spacer()
                         
                         VStack{
-                            Text("abr@gmail.com")
+                            Text("ruanablaikz45@gmail.com")
                         }
                         
                     }.padding()

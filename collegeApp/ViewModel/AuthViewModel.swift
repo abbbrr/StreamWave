@@ -1,10 +1,3 @@
-//
-//  AuthViewModel.swift
-//  collegeApp
-//
-//  Created by Рауан Аблайхан on 11.09.2023.
-//
-
 import Foundation
 import FirebaseAuth
 

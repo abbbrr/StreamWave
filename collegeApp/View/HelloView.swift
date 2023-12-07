@@ -17,16 +17,21 @@ struct HelloView: View {
                             
                             Image("micro")
                                 .resizable()
-                                .frame(width: .infinity, height: 300)
+                                .frame(width: 200, height: 195)
+                                .padding()
+                                .padding(.bottom)
                             
-                            Text("Добро пожаловать в StreamWave ")
+                            Text("Добро пожаловать в StreamWave")
                               .font(
-                                Font.custom("Cera Pro", size: 28)
+                                Font.custom("Cera Pro", size: adaptiveTextSize())
                                   .weight(.bold)
                               )
                               .multilineTextAlignment(.center)
                               .foregroundColor(Color(red: 0.94, green: 0.91, blue: 0.9))
-                              .frame(width: 270, alignment: .top)
+                              .frame(maxWidth: .infinity)
+                              .padding(.horizontal, 20)
+                            
+                            
                           
                             if !checkInternet{
                                 Text("Доступно тысячи подкастов для прослушивания бесплатно.")
@@ -90,5 +95,20 @@ struct HelloView: View {
                             Spacer()
                         }
                     }
+        
+        
     }
+    
+    
+     func adaptiveTextSize() -> CGFloat {
+           let device = UIDevice.current.userInterfaceIdiom
+           switch device {
+           case .phone:
+               return 20
+           case .pad:
+               return 28
+           default:
+               return 24
+           }
+       }
 }

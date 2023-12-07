@@ -11,6 +11,8 @@ struct MainView: View {
     @State private var searchPodcast = ""
     @State private var isTrueSearch = false
     
+    @State private var numberOfPodcasts: Int = 0
+    
     let columns = [
         GridItem(.fixed(200)),
         GridItem(.flexible()),
@@ -61,40 +63,44 @@ struct MainView: View {
                     
                     TextField("Введите ваш подкаст!", text: $searchPodcast)
                         .font(Font.system(size: 17, weight: .regular))
+                        .foregroundColor(.white)
                         .padding(15)
-                        .background(Color(.white))
+                        .background(Color(.black))
                         .cornerRadius(13)
                         .overlay(
                             RoundedRectangle(cornerRadius: 10)
-                                .stroke(Color.gray, lineWidth: 2)
+                                .stroke(Color("ColorBtn"), lineWidth: 0.5)
                         )
                         .padding()
                     
                     Spacer()
                     
-                    HStack {
-                        ForEach(["Хорор", "Любовь"], id: \.self) { genre in
-                            Button(action: {
-                                if selectedGenre == genre {
-                                        selectedGenre = nil
-                                        selectedButton = nil
-                                    } else {
-                                        selectedGenre = genre
-                                        selectedButton = genre
-                                    }
-                                    filterPodcasts()
-                            }) {
-                                Text(genre)
-                                    .foregroundColor(genre == selectedButton ? .white : .black)
-                                    .padding(.vertical, 12)
-                                    .frame(width: 148, height: 48, alignment: .center)
-                                    .background(genre == selectedButton ? Color(.black) : Color(red: 1, green: 0.6, blue: 0.46))
-                                    .cornerRadius(10)
-                                    .disabled(genre != selectedButton && selectedButton != nil)
+                    ScrollView(.horizontal){
+                        HStack {
+                            ForEach(["Хоррор", "Любовь", "Образование", "Мотивация","Общество и культура"], id: \.self) { genre in
+                                Button(action: {
+                                    if selectedGenre == genre {
+                                            selectedGenre = nil
+                                            selectedButton = nil
+                                        } else {
+                                            selectedGenre = genre
+                                            selectedButton = genre
+                                        }
+                                        filterPodcasts()
+                                }) {
+                                    Text(genre)
+                                        .foregroundColor(genre == selectedButton ? .white : .black)
+                                        .padding(.vertical, 12)
+                                        .frame(width: 148, height: 48, alignment: .center)
+                                        .background(genre == selectedButton ? Color(.black) : Color(red: 1, green: 0.6, blue: 0.46))
+                                        .cornerRadius(10)
+                                        .disabled(genre != selectedButton && selectedButton != nil)
+                                }
                             }
                         }
+                        .padding()
                     }
-                    .padding()
+                    
                     
                     VStack(alignment: .leading) {
                         VStack(alignment: .leading) {
@@ -102,10 +108,11 @@ struct MainView: View {
                                 .font(.title2)
                                 .bold()
                                 .foregroundColor(Color(red: 0.94, green: 0.91, blue: 0.9))
-                            
-                            Text("\(firestoreManager.podcasts.count) подкаста")
+            
+                            Text("\(finalFilteredPodcasts.count) подкаста")
                                 .font(Font.custom("PT Root UI", size: 15))
                                 .foregroundColor(Color(red: 0.62, green: 0.62, blue: 0.62))
+                          
                         }
                         .padding()
                         
@@ -116,6 +123,7 @@ struct MainView: View {
                                         KinoCard(podcast: podcast)
                                     }
                                 }
+                               
                             }
                         }
                         .padding(.horizontal)
@@ -127,6 +135,7 @@ struct MainView: View {
                 }
             }
         }
+        
     }
     
     func filterPodcasts() {

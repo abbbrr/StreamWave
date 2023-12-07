@@ -38,7 +38,6 @@ struct SettingsView: View {
                                }
                                .sheet(isPresented: $isShowPass) {
                                    VStack(spacing: 20){
-                                       Text(pass)
                                        SecureField("Введите старый пароль", text: $oldPass)
                                            .textFieldStyle(RoundedBorderTextFieldStyle())
                                        if isShowingError{
@@ -99,7 +98,7 @@ struct SettingsView: View {
                                                .foregroundColor(Color(red: 0.16, green: 0.16, blue: 0.16))
                                        }
                                         .padding(.horizontal, 123)
-                                        .padding(.vertical, 12)
+//                                        .padding(.vertical, 12)
                                         .frame(width: 343, height: 48, alignment: .center)
                                         .background(Color(red: 1, green: 0.6, blue: 0.46))
                                         .cornerRadius(10)

@@ -31,7 +31,7 @@ struct Additional: View {
                   )
                   .foregroundColor(Color(red: 0.94, green: 0.91, blue: 0.9))
                 
-                Text("по времени")
+                Text("продолжительность")
                   .font(Font.custom("PT Root UI", size: 12))
                   .foregroundColor(Color(red: 0.62, green: 0.62, blue: 0.62))
             }

@@ -38,6 +38,8 @@ struct ContentView: View {
             NavigationView {
                 if isLoggedIn {
                     TabBarView(email:$email, pass:$pass, isLoggedIn: $isLoggedIn)
+                        .environmentObject(firestoreManager)
+                        .environmentObject(likeViewModel)
                 }else{
                     HelloView(isLoggedIn: $isLoggedIn, email: $email, pass:$pass, checkInternet: false)
                 }
@@ -47,13 +49,15 @@ struct ContentView: View {
                     self.email = user.email ?? ""
                     self.isLoggedIn = true
                     
-                    likeViewModel.loadLikedPodcasts()
+//                    likeViewModel.loadLikedPodcasts()
                 }
             }
         } else{
             NavigationView {
                 if isLoggedIn {
                     TabBarView(email:$email, pass:$pass, isLoggedIn: $isLoggedIn)
+                        .environmentObject(firestoreManager)
+                        .environmentObject(likeViewModel)
                 }else{
                     HelloView(isLoggedIn: $isLoggedIn, email: $email, pass:$pass, checkInternet: true)
                 }
@@ -63,7 +67,6 @@ struct ContentView: View {
                     self.email = user.email ?? ""
                     self.isLoggedIn = true
                     
-                    likeViewModel.loadLikedPodcasts()
                 }
             }
         }
